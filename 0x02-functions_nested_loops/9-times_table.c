@@ -1,20 +1,28 @@
 #include "main.h"
 /**
- * times_table - prints out the multiplation table
+ * times_table - prints out the multiplication table
  * Return: void
  */
 void times_table(void)
 {
 	int multiplicand = 0;
-	int multiplier = 0, result;
+	int multiplier = 0;
+	int result = 0;
 
 	while (multiplicand <= 9)
 	{
-		for (multiplier = 0; multiplier <= 9; multiplier++)
+		multiplier = 0;
+		while (multiplier <= 9)
 		{
-			result =  multiplicand * multiplier;
+			result = multiplicand * multiplier;
+			if (multiplier != 0)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
 			if (result <= 9)
 			{
+				_putchar(' ');
 				_putchar(result + '0');
 			}
 			else
@@ -22,12 +30,7 @@ void times_table(void)
 				_putchar((result / 10) + '0');
 				_putchar((result % 10) + '0');
 			}
-
-			if (multiplier != 9)
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
+			multiplier++;
 		}
 		_putchar('\n');
 		multiplicand++;
