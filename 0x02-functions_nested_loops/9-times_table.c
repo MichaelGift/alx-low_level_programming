@@ -18,7 +18,6 @@ void times_table(void)
 			if (multiplier != 0)
 			{
 				_putchar(',');
-				_putchar(' ');
 			}
 			if (result <= 9)
 			{
