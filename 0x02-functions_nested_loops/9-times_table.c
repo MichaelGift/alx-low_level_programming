@@ -1,37 +1,44 @@
 #include "main.h"
 /**
- * times_table - prints out the multiplication table
- * Return: void
+ * times_table - Print the 9 times table, starting with 0
+ * Return: 0
  */
 void times_table(void)
 {
-	int multiplicand = 0;
-	int multiplier = 0;
-	int result = 0;
+	int x = 0; /* factor */
+	int y; /* count  */
+	int z; /* computed value */
 
-	while (multiplicand <= 9)
+	while (x < 10)
 	{
-		multiplier = 0;
-		while (multiplier <= 9)
+		y = 0;
+		while (y < 10)
 		{
-			result = multiplicand * multiplier;
-			if (multiplier != 0)
+			z = x * y;
+
+			if (z > 9)
 			{
-				_putchar(',');
+				_putchar(z / 10 + '0');
+				_putchar(z % 10 + '0');
 			}
-			if (result <= 9)
+			else if (y != 0)
 			{
 				_putchar(' ');
-				_putchar(result + '0');
+				_putchar(z + '0');
 			}
 			else
 			{
-				_putchar((result / 10) + '0');
-				_putchar((result % 10) + '0');
+				_putchar(z + '0');
 			}
-			multiplier++;
+
+			if (y != 9)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
+			y++;
 		}
 		_putchar('\n');
-		multiplicand++;
+		x++;
 	}
 }
