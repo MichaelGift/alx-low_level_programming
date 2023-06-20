@@ -6,7 +6,7 @@
 void jack_bauer(void)
 {
 	int total_minutes = 0;
-	int h1 = 0, h2 = 0 , m1 = 0, m2 = 0;
+	int h1 = 0, h2 = 0, m1 = 0, m2 = 0;
 
 	while (total_minutes < 1440)
 	{
