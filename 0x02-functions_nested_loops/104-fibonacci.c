@@ -1,41 +1,39 @@
 #include <stdio.h>
+#define LARGEST 10000000000
 /**
  * main - main block
- * Return: void
+ * Description: Find and print the first 98 fib numbers.
+ * Numbers should be coma and space separated.
+ * This is a test to find ways around large numbers without using GMP
+ * Return: 0
  */
 int main(void)
 {
-	unsigned long int  prev1 = 0, prev2 = 1, curr1 = 0, curr2 = 2;
+	unsigned long int fr1 = 0, bk1 = 1, fr2 = 0, bk2 = 2;
+	unsigned long int hold1, hold2, hold3;
 	int count;
 
-	printf("%lu, %lu, ", prev2, curr2);
+	printf("%lu, %lu, ", bk1, bk2);
 	for (count = 2; count < 98; count++)
 	{
-		if (prev2 + curr2 > 10000000000 || curr1 > 0 || prev1 > 0)
+		if (bk1 + bk2 > LARGEST || fr2 > 0 || fr1 > 0)
 		{
-			unsigned long int  carry = (prev2 + curr2) / 10000000000;
-			unsigned long int  remainder = (prev2 + curr2) % 10000000000;
-			unsigned long int  temp = prev1 + curr1 + carry;
-
-			prev1 = curr1;
-			curr1 = temp;
-			prev2 = curr2;
-			curr2 = remainder;
-			printf("%lu%lu", curr1, curr2);
+			hold1 = (bk1 + bk2) / LARGEST;
+			hold2 = (bk1 + bk2) % LARGEST;
+			hold3 = fr1 + fr2 + hold1;
+			fr1 = fr2, fr2 = hold3;
+			bk1 = bk2, bk2 = hold2;
+			printf("%lu%010lu", fr2, bk2);
 		}
 		else
 		{
-			unsigned long int temp = prev2 + curr2;
-
-			prev2 = curr2;
-			curr2 = temp;
-			printf("%lu", curr2);
+			hold2 = bk1 + bk2;
+			bk1 = bk2, bk2 = hold2;
+			printf("%lu", bk2);
 		}
-
 		if (count != 97)
 			printf(", ");
 	}
-
 	printf("\n");
 	return (0);
 }
