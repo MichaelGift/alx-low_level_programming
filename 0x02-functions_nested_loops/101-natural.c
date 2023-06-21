@@ -15,6 +15,6 @@ int main(void)
 		if (ul % 3 == 0 || ul % 5 == 0)
 			sum += ul;
 	}
-	printf("%d", sum);
+	printf("%d\n", sum);
 	return (0);
 }
