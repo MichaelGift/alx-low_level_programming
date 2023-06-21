@@ -10,14 +10,16 @@ int main(void)
 	long int fib1 = 1, fib2 = 2, fib3;
 
 	printf("%lu, %lu, ", fib1, fib2);
-	for ( count = 3; count <= 50; count++)
+	for (count = 3; count <= 50; count++)
 	{
 		fib3 = fib1 + fib2;
-		printf("%lu, ", fib3);
+		if (count == 50)
+			printf("%lu\n", fib3);
+		else
+			printf("%lu, ", fib3);
 
 		fib1 = fib2;
 		fib2 = fib3;
 	}
-	printf("\n");
 	return (0);
 }
