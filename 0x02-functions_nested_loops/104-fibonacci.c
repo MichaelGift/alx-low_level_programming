@@ -1,36 +1,35 @@
 #include <stdio.h>
 #define LARGEST 10000000000
 /**
- * main - print out the first 98  fibonacci numbers
+ * main - write a program to handle very largen numbers
  * Return: 0
  */
 int main(void)
 {
-	unsigned long int up1 = 0, lp1 = 1, up2 = 0, lp2 = 2;
+	unsigned long int fr1 = 0, bk1 = 1, fr2 = 0, bk2 = 2;
+	unsigned long int hold1, hold2, hold3;
 	int count;
 
-	printf("%lu, %lu, ", lp1, lp2);
-	for ( count = 2; count < 98; count++)
+	printf("%lu, %lu, ", bk1, bk2);
+	for (count = 2; count < 98; count++)
 	{
-		unsigned long int temp;
-		if (lp2 > LARGEST)
+		if (bk1 + bk2 > LARGEST || fr2 > 0 || fr1 > 0)
 		{
-			unsigned long int q = lp2 / LARGEST;
-
-			lp2 %= LARGEST;
-			up2 += up1 + q;
+			hold1 = (bk1 + bk2) / LARGEST;
+			hold2 = (bk1 + bk2) % LARGEST;
+			hold3 = fr1 + fr2 + hold1;
+			fr1 = fr2, fr2 = hold3;
+			bk1 = bk2, bk2 = hold2;
+			printf("%lu%010lu", fr2, bk2);
 		}
-		temp = lp2;
-
-		lp2 += lp1;
-		lp1 = temp;
-
-		printf("%lu", lp2);
-
+		else
+		{
+			hold2 = bk1 + bk2;
+			bk1 = bk2, bk2 = hold2;
+			printf("%lu", bk2);
+		}
 		if (count != 97)
-		{
 			printf(", ");
-		}
 	}
 	printf("\n");
 	return (0);
