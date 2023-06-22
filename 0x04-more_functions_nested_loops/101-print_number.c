@@ -17,7 +17,7 @@ void print_number(int n)
 
 	count = 1;
 
-	while (n/count > 9)
+	while (n / count > 9)
 		count *= 10;
 
 	while (count >= 1)
