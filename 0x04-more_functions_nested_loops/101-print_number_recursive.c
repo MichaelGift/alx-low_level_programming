@@ -6,19 +6,17 @@
  */
 void print_number(int n)
 {
-	int div = 1;
+	int p;
 
 	if (n < 0)
 	{
 		_putchar('-');
 		n = -n;
 	}
-	while (n / div >= 10)
-		div *= 10;
-
-	while(div != 0)
+	if (n / 10 != 0)
 	{
-		_putchar((n / div )% 10 + '0');
-		div /= 10;
+		p = n / 10;
+		print_number(p);
 	}
+	_putchar(n % 10 + '0');
 }
