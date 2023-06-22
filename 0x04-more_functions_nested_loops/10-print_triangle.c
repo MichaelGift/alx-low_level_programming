@@ -14,7 +14,7 @@ void print_triangle(int size)
 	{
 		for (count = 0; count < size; count++)
 		{
-			int spacing = size - row -1;
+			int spacing = size - row - 1;
 
 			if (count < spacing)
 				_putchar(' ');
