@@ -15,12 +15,8 @@ void more_numbers(void)
 			if (num >= 10)
 			{
 				_putchar((num / 10) + '0');
-				_putchar((num % 10) + '0');
 			}
-			else
-			{
-				_putchar(num + '0');
-			}
+			_putchar((num % 10) + '0');
 		}
 		_putchar('\n');
 		count++;
