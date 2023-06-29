@@ -1,4 +1,4 @@
-gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 101-main.c 101-print_number.c -o 101-print_number#include "main.h"
+#include "main.h"
 
 /**
  * print_number - prints an integer.
