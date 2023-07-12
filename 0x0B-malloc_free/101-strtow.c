@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include "main.h"
@@ -24,47 +23,51 @@ int countWords(char *str)
 /**
  * strtow - Splits a string into words (array of strings)
  * @str: The string to split
+ *
  * Return: The pointer to the string array or NULL if memory allocation
  * fails or str is an empty string ("") or str is NULL
  */
 char **strtow(char *str)
 {
-	int wordCount, i, j = 0;
-	char **words, *token, *copy;
+	int wordCount, wordLen = 0, len, i, j = 0, k = 0;
+	char **words, prevChar;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
-
 	wordCount = countWords(str);
 	if (wordCount == 0)
 		return (NULL);
-
-	copy  = strdup(str);
-	if (copy == NULL)
-		return (NULL);
-
 	words = malloc(sizeof(char *) * (wordCount + 1));
 	if (words == NULL)
 		return (NULL);
 
-	token = strtok(copy, " ");
-	while (token != NULL)
+	len = strlen(str);
+	prevChar = ' ';
+
+	for (i = 0; i < len; i++)
 	{
-		words[j] = strdup(token);
-		if (words[j] == NULL)
+		if (str[i] != ' ')
 		{
-			for (i = 0; i < j; i++)
-				free(words[i]);
-			free(words);
-			free(copy);
-			return (NULL);
+			if (prevkChar == ' ')
+			{
+				while (str[i + wordLen] != '\0' && str[i + wordLen] != ' ')
+					wordLen++;
+				words[j] = malloc(sizeof(char) * (wordLen + 1));
+				if (words[j] == NULL)
+				{
+					for (i = 0; i < j; i++)
+						free(words[i]);
+					free(words);
+					return (NULL);
+				}
+				k = 0;
+				j++;
+			}
+			words[j - 1][k++] = str[i];
 		}
-		j++;
-		token = strtok(NULL, " ");
+		prevChar = str[i];
 	}
 	words[j] = NULL;
-
-	free(copy);
-
 	return (words);
 }
+
