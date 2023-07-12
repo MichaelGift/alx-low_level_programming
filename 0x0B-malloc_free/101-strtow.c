@@ -48,7 +48,7 @@ char **strtow(char *str)
 	{
 		if (str[i] != ' ')
 		{
-			if (prevkChar == ' ')
+			if (prevChar == ' ')
 			{
 				while (str[i + wordLen] != '\0' && str[i + wordLen] != ' ')
 					wordLen++;
