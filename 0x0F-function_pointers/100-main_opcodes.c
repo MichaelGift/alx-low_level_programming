@@ -26,9 +26,9 @@ int main(int argc, char **argv)
 		exit(2);
 	}
 
-        for (index = 0; index < num_bytes; index++)
-                printf("%02hhx ", main_func[index]);
-        printf("\n");
+	for (index = 0; index < num_bytes; index++)
+		printf("%02hhx ", main_func[index]);
+	printf("\n");
 
 	return (0);
 }
