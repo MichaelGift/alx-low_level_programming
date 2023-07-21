@@ -1,6 +1,12 @@
 #ifndef VARIADIC_H
 #define VARIADIC_H
 #include <stdarg.h>
+
+/**
+ * struct format - specifies a format for a specific function
+ * @f: determines operation to performed
+ * @func: pointer to funtion to carry out the operation
+ */
 typedef struct format
 {
 	char *f;
