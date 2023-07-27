@@ -3,10 +3,10 @@
 #include "lists.h"
 
 /**
-* print_list - prints all the elements of a linked list
-* h: a linked list
-* ReturnL a strucutre to a linked list
-*/
+ * print_list - prints all the elements of a linked list
+ * @h: a linked list
+ * Return: a strucutre to a linked list
+ */
 
 size_t print_list(const list_t *h)
 {
