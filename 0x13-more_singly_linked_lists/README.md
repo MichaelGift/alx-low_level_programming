@@ -1,1 +1,2 @@
-More singly linked list practiceMore singly linked list practice
+More singly linked list practice
+Encountered a very strange git error
