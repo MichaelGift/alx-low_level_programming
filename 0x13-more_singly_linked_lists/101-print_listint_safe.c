@@ -3,11 +3,12 @@
 #include <stdbool.h>
 #include "lists.h"
 
+
 /**
- * print_listint_safe - A function that prints a listint_t linked list safely.
+ * print_listint_safe - A function that prints a linked list safely.
  * @head: Points to the beginning of a linked list.
  * Return: The number of nodes in the list.
- **/
+ */
 
 size_t print_listint_safe(const listint_t *head)
 {
@@ -16,10 +17,10 @@ size_t print_listint_safe(const listint_t *head)
 
 	if (head == NULL)
 		return (0);
-
 	slow_ptr = head;
 	fast_ptr = head->next;
-	while (fast_ptr != NULL && fast_ptr > slow_ptr)
+
+	while (fast_ptr != NULL && fast_ptr < slow_ptr)
 	{
 		size += 1;
 		printf("[%p] %i\n", (void *)slow_ptr, slow_ptr->n);
@@ -34,3 +35,4 @@ size_t print_listint_safe(const listint_t *head)
 		printf("-> [%p] %i\n", (void *)fast_ptr, fast_ptr->n);
 	return (size);
 }
+
