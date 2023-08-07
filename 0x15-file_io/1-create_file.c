@@ -2,7 +2,7 @@
 
 /**
  * create_file - Create a file and writes text content to it
- * @filenam: The name of the file to create
+ * @filename: The name of the file to create
  * @text_content: A NULL-terminated strig to write to the file
  * Return: 1 or -1 on failure
  */
@@ -35,5 +35,5 @@ int create_file(const char *filename, char *text_content)
 	if (close_result == -1)
 		exit(EXIT_FAILURE);
 
-	return(1);
+	return (1);
 }
