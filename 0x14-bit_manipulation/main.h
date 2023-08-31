@@ -1,4 +1,4 @@
-fndef BITMANIPULATION_H
+#ifndef BITMANIPULATION_H
 #define BITMANIPULATION_H
 int _putchar(char c);
 unsigned int binary_to_uint(const char *b);
