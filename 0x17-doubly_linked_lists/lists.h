@@ -6,7 +6,9 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
+ * struct dlistint_s - Insert description here
  * @n: integer
  * @prev: points to the previous node
  * @next: points to the next node
