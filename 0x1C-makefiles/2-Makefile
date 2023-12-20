@@ -1,4 +1,4 @@
-ME = school
+NAME = school
 
 CC = gcc
 
