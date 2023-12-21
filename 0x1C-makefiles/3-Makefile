@@ -4,16 +4,16 @@ CC = gcc
 RM = rm -f
 
 OBJ = $(SRC:.c=.o)
-	SRC = main.c school.c
+SRC = main.c school.c
 
 all: $(OBJ)
-		$(CC) $(OBJ) -o $(NAME)
+	$(CC) $(OBJ) -o $(NAME)
 
 clean:
-		$(RM) *~ $(NAME)
+	$(RM) *~ $(NAME)
 
 oclean:
-		$(RM) $(OBJ)
+	$(RM) $(OBJ)
 
 fclean: clean oclean
 
