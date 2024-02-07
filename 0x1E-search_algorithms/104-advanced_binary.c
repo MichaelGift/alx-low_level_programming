@@ -34,7 +34,7 @@ int advanced_binary_recursive(int *array, size_t left, size_t right, int value)
 
 /**
   * advanced_binary - Searches for a value in a sorted array
-  * 
+  *
   * @array: Pointer to the first element.
   * @size: No of elements.
   * @value: Target value.
